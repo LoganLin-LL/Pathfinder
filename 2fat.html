@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Factor Authentication</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      width: 800px;
+      max-width: 95%;
+      display: flex;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .left img {
+      width: 325px;
+      height: auto;
+    }
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .right h2 {
+      margin-bottom: 30px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      padding-left: 10px;
+      background-color: #f2f2f2;
+    }
+    .login-btn {
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      width: 106.5%;
+    }
+    .links {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .links a {
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="{{ url_for('static', filename='Pathfinder Modified.png') }}" alt="Pathfinder Logo"/>
+    </div>
+    <div class="right">
+      <h2>Two-Factor Authentication</h2>
+      <p>Please enter the 6-digit code sent to your device.</p>
+      <form method="POST" action="/2fa">
+        <div class="input-group">
+          <input id="codeInput" name="code" type="text" maxlength="6" placeholder="Enter 2FA Code" required>
+        </div>
+        <button class="login-btn" type="submit">VERIFY</button>
+      </form>
+      <div class="links">
+        <p><a href="#">Didn't receive a code?</a></p>
+        <p><a href="#">Back to Login</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
