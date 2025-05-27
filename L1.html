@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background: white;
+      border-radius: 10px;
+      width: 800px;
+      max-width: 95%;
+      display: flex;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .left img {
+      width: 325px;
+      height: auto;
+    }
+    .right {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .right h2 {
+      margin-bottom: 30px;
+    }
+    .input-group {
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      padding-left: 10px;
+      background-color: #f2f2f2;
+    }
+    .login-btn {
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      width: 106%;
+    }
+    .links {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .links a {
+      color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="{{ url_for('static', filename='Pathfinder Modified.png') }}" alt="Pathfinder Logo"/>
+    </div>
+    <div class="right">
+      <h2>Member Login</h2>
+      <form method="POST" action="/login">
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button class="login-btn" type="submit">LOGIN</button>
+      </form>
+      <div class="links">
+        <p><a href="#">Forgot Username / Password?</a></p>
+        <p><a href="#">Create your Account →</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
