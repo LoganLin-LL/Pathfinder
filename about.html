@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pathfinder - About Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      height: 100vh;
+      display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 220px;
+      background: white;
+      height: 100vh;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      padding-top: 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #f0f0f0;
+      padding-left: 25px;
+      color: #007bff;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 220px;
+      width: calc(100% - 220px);
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .container {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    .container h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Pathfinder</h2>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('features') }}">Features</a>
+    <a href="{{ url_for('about') }}">About Us</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container">
+      <h1>About Us</h1>
+      <div class="about-text">
+        I am currently a student at Doral Academy Preparatory High School, where I am deeply involved in academic and extracurricular pursuits that center around technology, learning, and helping others grow. <br><br>
+        Pathfinder was created as a solution to help students better understand the alignment between their current coursework and their future goals—whether that’s college admissions, career preparation, or skill-building. <br><br>
+        My mission is to continue improving the Pathfinder platform, integrating advanced AI features and personalized tracking tools to make education more strategic, accessible, and impactful.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
